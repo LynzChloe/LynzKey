@@ -1,4 +1,4 @@
-shared.key = "KEY_HERE"
+shared.key = shared.key or "KEY_HERE"
 
 local Domain = "demo.lexir.rocks"
 
