@@ -13,7 +13,7 @@ if(isset($_GET['solve'])) {
     if($Row) {
         if($Row[2] == 0) {
             $Connection->query("UPDATE `userdata` SET `USERPASS`=1 WHERE `USERIP`='$USER_IP'");
-            header('refresh:5;url=https://'.USER_DOMAIN.'/index.html');
+            header('refresh:0;url=https://'.USER_DOMAIN.'/index.html');
         }
     }
 } else {
@@ -24,6 +24,8 @@ if(isset($_GET['solve'])) {
     } else {
         if($Row[2] == 1) {
             die(json_encode(["key"=>$Row[1]]));
+        } else {
+        	die(json_encode(["solve"=>USER_FINISH]));
         }
     }
 }
