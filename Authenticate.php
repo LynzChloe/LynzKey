@@ -15,7 +15,7 @@ if($Row) {
     $UserRand = $_GET['rand'];
 
     # just trust the ip thing at this point
-    if($Row[2] == 1) {
+    if($Row[2] == 1 && $Row[1] == $UserKey) {
         $Connection->query("DELETE FROM `userdata` WHERE `USERIP`='$USER_IP'");
         die(md5(md5($UserKey) . md5($UserRand)));
     }
